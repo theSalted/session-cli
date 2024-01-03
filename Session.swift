@@ -15,7 +15,7 @@ var i = 1
 while i < arguments.count {
     let argument = arguments[i]
     switch argument {
-    case "finish", "-F", "-f":
+    case "finish", "end", "-F", "-f", "-E", "-e":
         scheme = .finish // Stop on going session
     case "repeat", "-R", "-r":
         scheme = .startPrevious
