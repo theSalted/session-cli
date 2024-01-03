@@ -1,3 +1,5 @@
+//#!/usr/bin/env swift
+
 import Foundation
 
 var intent: String?
@@ -13,29 +15,29 @@ var i = 1
 while i < arguments.count {
     let argument = arguments[i]
     switch argument {
-    case "finish", "-F":
+    case "finish", "-F", "-f":
         scheme = .finish // Stop on going session
-    case "repeat", "-R":
+    case "repeat", "-R", "-r":
         scheme = .startPrevious
-    case "pause", "-P":
+    case "pause", "-P", "-p":
         scheme = .togglePause
-    case "break", "-B":
+    case "break", "-B", "-b":
         scheme = .takeBreak
-    case "quit", "-Q":
+    case "quit", "-Q", "-q":
         scheme = .abandon
-    case "--intent", "-I":
+    case "--intent", "-I", "-i":
         intent = arguments[i+1]
         i += 1
-    case "--duration", "-D":
+    case "--duration", "-D", "-d":
         duration = Int(arguments[i+1])
         i += 1
-    case "--category", "-C":
+    case "--category", "-C", "-c":
         categoryName = arguments[i+1]
         i += 1
-    case "--notes", "-N":
+    case "--notes", "-N", "-n":
         notes = arguments[i+1]
         i += 1
-    case "help", "--help", "-H":
+    case "help", "--help", "-H", "-h":
         printHelp()
     // Add other cases as needed
     default:
